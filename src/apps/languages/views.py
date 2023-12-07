@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.views import ModelViewSet
 
-# Create your views here.
+
+
+class LanguageView(ModelViewSet):
+
+    queryset = Language.objects.all()
+    serializer_class = LanguageSerializer
