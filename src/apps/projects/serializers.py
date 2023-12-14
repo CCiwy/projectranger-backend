@@ -13,7 +13,8 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 
     def get_project_notes(self, obj):
-        return ProjectNotesSerializer(obj.project_notes.all(), many=True).data
+        notes = ProjectNotes.objects.filter(project=obj)
+        return ProjectNotesSerializer(notes, many=True).data
 
 class ProjectNotesSerializer(serializers.ModelSerializer):
     class Meta:
