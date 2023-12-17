@@ -17,6 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+
+from rest_framework.routers import DefaultRouter
+
+from apps.projects import urls as project_urls
+from apps.languages import urls as languages_urls
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/',
+         include([
+            path('languages/', include(languages_urls)),
+            path('projects/', include(project_urls)),
+         ])
 ]

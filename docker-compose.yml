@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: ranger_db
+    environment:
+      POSTGRES_USER: ranger_db
+      POSTGRES_PASSWORD: secret_pass
+      POSTGRES_DB: ranger
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
