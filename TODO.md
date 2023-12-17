@@ -13,6 +13,15 @@ CURRENT SPRINT/STREAM:
 [X] add cascade on delete to blueprint models
 
 NEXT SPRINT/STREAM
+[ ] find out why loading from env is broken
+[ ] create user app/model (CustomUser)
+[ ] make migrations
+[ ] create superuser
+.....
+
+profit
+
+....
 run tests and fix everything that breaks
 create more tests
 
