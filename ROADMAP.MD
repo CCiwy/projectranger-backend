@@ -3,10 +3,10 @@
 ## Version 0.5.0 - Project Management
 
 ### Milestone 1: Initial Setup and Authentication
-- [ ] **Task 1:** Set up Django project structure.
+- [X] **Task 1:** Set up Django project structure.
 - [ ] **Task 2:** Create Django applications for User, Project, ProjectIdea.
     [ ] User
-    [ ] Project
+    [X] Project
     [ ] ProjectIdea
 - [ ] **Task 3:** Implement user authentication using Django's built-in authentication system.
 - [ ] **Task 4:** Set up Django Rest Framework (DRF) for API development.
