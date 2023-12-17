@@ -4,7 +4,7 @@ from rest_framework import viewsets
 from .serializers import ProjectSerializer
 
 
-class ProjectsViewset(viewsets.ModelViewSet):
+class ProjectViewSet(viewsets.ModelViewSet):
     """ todo: add logic to return different serializers depending on ownersship """
 
     def get_queryset(self):
@@ -15,7 +15,7 @@ class ProjectsViewset(viewsets.ModelViewSet):
         return ProjectSerializer
 
 
-class ProjectNotesViewset(viewsets.ModelViewSet):
+class ProjectNotesViewSet(viewsets.ModelViewSet):
 
 
     def get_queryset(self):
