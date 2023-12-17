@@ -21,7 +21,7 @@ from django.urls import path
 from rest_framework.routers import DefaultRouter
 
 
-from apps.blueprintsn import urls as blueprint_urls
+from apps.blueprints import urls as blueprint_urls
 from apps.languages import urls as languages_urls
 from apps.projects import urls as project_urls
 
