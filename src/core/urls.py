@@ -20,9 +20,10 @@ from django.urls import path
 
 from rest_framework.routers import DefaultRouter
 
-from apps.projects import urls as project_urls
-from apps.languages import urls as languages_urls
 
+from apps.blueprintsn import urls as blueprint_urls
+from apps.languages import urls as languages_urls
+from apps.projects import urls as project_urls
 
 
 urlpatterns = [
@@ -31,5 +32,6 @@ urlpatterns = [
          include([
             path('languages/', include(languages_urls)),
             path('projects/', include(project_urls)),
+            path('blueprints/', include(blueprint_urls)),
          ])
 ]
