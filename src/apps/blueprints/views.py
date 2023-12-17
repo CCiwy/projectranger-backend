@@ -7,7 +7,7 @@ from apps.blueprints.models import Blueprint
 from .serializers import BlueprintSerializer
 
 class BlueprintViewSet(viewsets.ModelViewSet):
-
+    queryset = Blueprint.objects.all()
 
     def get_queryset(self):
         return Blueprint.objects.all()
