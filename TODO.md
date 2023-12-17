@@ -1,7 +1,7 @@
 CURRENT SPRINT/STREAM:
 [X] add docker compose for postgres
-[ ] create env file
-[ ] create env example file
+[X] create env file
+[X] create env example file
 
 [ ] add database settings to env
 [ ] add settings to env
