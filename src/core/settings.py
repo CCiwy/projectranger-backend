@@ -45,6 +45,7 @@ THIRD_PARTY_APPS = [
 
 
 PROJECT_APPS = [
+    'src.apps.blueprints',
     'src.apps.languages',
     'src.apps.projects',
 ]
