@@ -3,7 +3,7 @@ from rest_framework import serializers
 from .models import Project
 
 class ProjectSerializer(serializers.ModelSerializer):
-    project_notes = serialiers.SerializerMethodField()
+    project_notes = serializers.SerializerMethodField()
 
 
     class Meta:
