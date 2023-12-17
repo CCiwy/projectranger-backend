@@ -34,4 +34,5 @@ urlpatterns = [
             path('projects/', include(project_urls)),
             path('blueprints/', include(blueprint_urls)),
          ])
+    )
 ]
