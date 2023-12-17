@@ -3,8 +3,9 @@ CURRENT SPRINT/STREAM:
 [X] create env file
 [X] create env example file
 
-[ ] add database settings to env
-[ ] add settings to env
+[X] add database settings to env
+[X] add settings to env
+[ ] add database to settings.py
 
 NEXT SPRINT/STREAM
 run tests and fix everything that breaks
