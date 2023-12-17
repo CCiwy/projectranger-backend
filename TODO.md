@@ -10,7 +10,7 @@ CURRENT SPRINT/STREAM:
     [X] move models
     [X] views/routes
 
-
+[X] add cascade on delete to blueprint models
 
 NEXT SPRINT/STREAM
 run tests and fix everything that breaks

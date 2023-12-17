@@ -7,8 +7,8 @@ class ProjectBlueprint(models.Model):
 
 
 class BlueprintLanguageWeight(models.Model):
-    blueprint = models.ForeignKey(ProjectBlueprint) # todo: cascaade on delete
-    language = models.ForeignKey('languages.Language')
+    blueprint = models.ForeignKey(ProjectBlueprint, on_delete=models.CASCADE)
+    language = models.ForeignKey('languages.Language', on_delete=models.CASCADE)
     weight = models.DecimalField(max_digits=6, decimal_places=6)
 
 
