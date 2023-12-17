@@ -46,8 +46,8 @@ THIRD_PARTY_APPS = [
 
 
 PROJECT_APPS = [
-    'languages',
-    'projects',
+    'src.apps.languages',
+    'src.apps.projects',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
