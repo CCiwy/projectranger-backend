@@ -3,17 +3,25 @@ from rest_framework import viewsets
 
 from apps.projects.models import Project
 
-from .models import Blueprint
+from apps.blueprints.models import Blueprint
+from .serializers import BlueprintSerializer
+
+class BlueprintViewSet(viewsets.ModelViewSet):
 
 
-class BlueprintViewset(viewsets.ModelViewSet):
-    user = self.kwargs['user']
+    def get_queryset(self):
+        return Blueprint.objects.all()
 
-    start_date = self.kwargs.get('start_date', False)
-    language = self.kwargs.get('language', False)
+    def get_serializer_class(self):
+        return BlueprintSerializer
 
 
     def get_project_for_user(self):
+
+        user = self.kwargs['user']
+
+        start_date = self.kwargs.get('start_date', False)
+        language = self.kwargs.get('language', False)
         q = Project.objects.filter(owner=user)
         if start_date:
             q = q.filter(created_at__gte=start_date) 
