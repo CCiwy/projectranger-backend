@@ -54,4 +54,4 @@ def get_project_idea_full_by_language(self):
         ideas = LanguageProjects.objects.filter(language_in=languages, weight__lte=threshold).order_by('-weight')[:limit]
         result.extend(ideas)
     
-    return result Create your views here.
+    return result
