@@ -41,6 +41,7 @@ class UserFriendShip(models.Model):
 
 
 
+
 class Profile(models.Model):
     """ model for user profiles """
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
