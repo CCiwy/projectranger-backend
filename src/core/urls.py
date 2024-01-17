@@ -18,20 +18,21 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-
-
 from apps.blueprints import urls as blueprint_urls
 from apps.languages import urls as languages_urls
 from apps.projects import urls as project_urls
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/v1/',
-         include([
-            path('languages/', include(languages_urls)),
-            path('projects/', include(project_urls)),
-            path('blueprints/', include(blueprint_urls)),
-         ])
-    )
+    path("admin/", admin.site.urls),
+    path(
+        "api/v1/",
+        include(
+            [
+                path("languages/", include(languages_urls)),
+                path("projects/", include(project_urls)),
+                path("blueprints/", include(blueprint_urls)),
+            ]
+        ),
+    ),
 ]

@@ -9,6 +9,7 @@ from apps.blueprints.serializers import BlueprintSerializer
 
 from apps.languages.models import Language
 
+
 class BlueprintViewSet(viewsets.ModelViewSet):
     queryset = Blueprint.objects.all()
 
@@ -18,34 +19,32 @@ class BlueprintViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         return BlueprintSerializer
 
-
     def get_project_for_user(self):
+        user = self.kwargs["user"]
 
-        user = self.kwargs['user']
-
-        start_date = self.kwargs.get('start_date', False)
-        language = self.kwargs.get('language', False)
+        start_date = self.kwargs.get("start_date", False)
+        language = self.kwargs.get("language", False)
         q = Project.objects.filter(owner=user)
         if start_date:
-            q = q.filter(created_at__gte=start_date) 
+            q = q.filter(created_at__gte=start_date)
         if language:
             q = q.filter(projectlanguage__language=language)
 
         return q
 
-
     def calculate_threshold(self, skill_level, language_skill):
-        """ Calculate the threshold for a project idea based on the skill level of the user and the skill level of the language
-            both range from 0 to 1
+        """Calculate the threshold for a project idea based on the skill level of the user and the skill level of the language
+        both range from 0 to 1
         """
         return skill_level * language_skill
 
-
-
-
     def get_project_idea_full_by_language(self):
-        general_skill = self.kwargs['general_skill'] # how good as a programmer are you?
-        languages = self.kwargs['languages'] # what languages do you like or dislike or want to learn?
+        general_skill = self.kwargs[
+            "general_skill"
+        ]  # how good as a programmer are you?
+        languages = self.kwargs[
+            "languages"
+        ]  # what languages do you like or dislike or want to learn?
         # frameworks = self.kwargs['frameworks'] # what frameworks do you like or dislike or want to learn?
         # tags = self.kwargs['tags'] # game, web, mobile, desktop, office, organize, etc.
 
@@ -53,16 +52,19 @@ class BlueprintViewSet(viewsets.ModelViewSet):
         # based on your skill level, your language preferences, and your framework preferences
         # and the weights of each language and framework for each project idea
 
-
         # calculate skill level -> threshold
         # calculate skill per language
-        limit = 10 # todo: make this constant? parameter?
+        limit = 10  # todo: make this constant? parameter?
         language_skill = 1
         result = []
         languages = Language.objects.filter(name__in=languages)
         for language in languages:
-            threshold = self.calculate_threshold(Decimal(general_skill), Decimal(language_skill))
-            ideas = BlueprintLanguageWeight.objects.filter(language_in=languages, weight__lte=threshold).order_by('-weight')[:limit]
+            threshold = self.calculate_threshold(
+                Decimal(general_skill), Decimal(language_skill)
+            )
+            ideas = BlueprintLanguageWeight.objects.filter(
+                language_in=languages, weight__lte=threshold
+            ).order_by("-weight")[:limit]
             result.extend(ideas)
-        
+
         return result
