@@ -1,12 +1,13 @@
 from decimal import Decimal
+
 from rest_framework import viewsets
 
 from apps.projects.models import Project
 
-from apps.blueprints.models import Blueprint
+from apps.blueprints.models import Blueprint, BlueprintLanguageWeight
 from apps.blueprints.serializers import BlueprintSerializer
 
-from apps.languages.models import Language, BlueprintLanguageWeight
+from apps.languages.models import Language
 
 class BlueprintViewSet(viewsets.ModelViewSet):
     queryset = Blueprint.objects.all()
