@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "ranger"
+version = "0.1.0"
+description = "Backend for sideproject management application"
+authors = ["Ciwy <c.walter@afk-dev.de>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "5.0"
+djangorestframework = "3.14"
+pillow = "^10.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
