@@ -7,9 +7,8 @@ from rest_framework import ModelViewset
 
 
 from apps.users.serializer import UserSerializer, ProfileSerializer
-from apps.users.permissions import isSameUser
 from apps.users.models import Users, Profile, UserFriendShip
-
+from apps.users.permissions import isSameUser
 
 class UserView(ModelViewset):
     """ 
@@ -25,7 +24,7 @@ class UserView(ModelViewset):
         if self.action == 'retrieve':
             return [isAuthenticated]
 
-        return [permissions.isSameUser]
+        return [isSameUser]
 
 
 

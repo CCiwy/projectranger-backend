@@ -1,4 +1,3 @@
-from decimal import Decimal
 from rest_framework import viewsets
 
 from .serializers import ProjectSerializer

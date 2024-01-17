@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Project
+from .models import Project, ProjectNotes
 
 class ProjectSerializer(serializers.ModelSerializer):
     project_notes = serializers.SerializerMethodField()
