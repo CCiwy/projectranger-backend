@@ -24,13 +24,16 @@ SPRINT/STREAM 16.1.2023:
 [X] feat/user: add friendships 
 
 
+SPRINT/STREAM 17.1.2023:
+[ ] add tests
+[ ] add poetry
+[ ] feat/projects: add project rating/categories/tags
+[ ] make migrations
+
 NEXT SPRINT/STREAM
 [ ] Project: add test db
-[ ] make migrations
-[ ] add tests
 [ ] feat/user: add password recovery strategy
 [ ] feat/user: add user experience profile
-[ ] feat/projects: add project rating/categories/tags
 
 
 
