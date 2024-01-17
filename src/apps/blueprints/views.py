@@ -6,9 +6,7 @@ from apps.projects.models import Project
 from apps.blueprints.models import Blueprint
 from apps.blueprints.serializers import BlueprintSerializer
 
-
-from apps.languages.models import Language, LanguageProjects
-
+from apps.languages.models import Language, BlueprintLanguageWeight
 
 class BlueprintViewSet(viewsets.ModelViewSet):
     queryset = Blueprint.objects.all()
@@ -63,7 +61,7 @@ class BlueprintViewSet(viewsets.ModelViewSet):
         languages = Language.objects.filter(name__in=languages)
         for language in languages:
             threshold = self.calculate_threshold(Decimal(general_skill), Decimal(language_skill))
-            ideas = LanguageProjects.objects.filter(language_in=languages, weight__lte=threshold).order_by('-weight')[:limit]
+            ideas = BlueprintLanguageWeight.objects.filter(language_in=languages, weight__lte=threshold).order_by('-weight')[:limit]
             result.extend(ideas)
         
         return result
