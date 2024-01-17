@@ -4,7 +4,7 @@ from rest_framework import viewsets
 from apps.projects.models import Project
 
 from apps.blueprints.models import Blueprint
-from apps.blueprints.serilaizers import BlueprintSerializer
+from apps.blueprints.serializers import BlueprintSerializer
 
 
 from apps.languages.models import Language, LanguageProjects
