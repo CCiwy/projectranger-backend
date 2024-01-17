@@ -1,6 +1,3 @@
-# from rest_framework import permissions
-
-
 from rest_framework.http import Response
 from rest_framework.auth import isAuthenticated
 from rest_framework import ModelViewset
