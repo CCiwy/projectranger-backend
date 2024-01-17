@@ -14,7 +14,8 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 test = os.getenv('TEST', False)
 print(f'got {test}!')
@@ -54,6 +55,7 @@ PROJECT_APPS = [
     'src.apps.blueprints',
     'src.apps.languages',
     'src.apps.projects',
+    'src.apps.users',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
@@ -96,13 +98,20 @@ WSGI_APPLICATION = 'src.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'NAME': 'ranger',
+        'USER': 'ranger_db',
+        'PASSWORD': 'secret_pass',
+        'HOST': 'localhost',
+        'PORT': 5432,
+        #'HOST': os.getenv('DB_HOST'),
+        #'NAME': os.getenv('DB_NAME'),
+        #'USER': os.getenv('DB_USER'),
+        #'PASSWORD': os.getenv('DB_PASSWORD'),
+        #'HOST': os.getenv('DB_HOST'),
+        #'PORT': os.getenv('DB_PORT'),
     }
 }
+
 
 
 # Password validation
@@ -143,5 +152,7 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+AUTH_USER_MODEL = 'users.CustomUser'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
