@@ -16,17 +16,27 @@ SPRINT/STREAM 8.1.2024:
 [x] create superuser
 [X] create user app/model (CustomUser)
 [X] update README
-[ ] make migrations
 
 
 SPRINT/STREAM 16.1.2023:
 [X] BUG: loading from env vars into settings does not work
-[ ] Project: add test db
-[ ] ...
+[X] feat/user: add user profile
+[X] feat/user: add friendships 
 
 
 NEXT SPRINT/STREAM
+[ ] Project: add test db
+[ ] make migrations
+[ ] add tests
+[ ] feat/user: add password recovery strategy
+[ ] feat/user: add user experience profile
+[ ] feat/projects: add project rating/categories/tags
+
+
+
 ....
+
+
 run tests and fix everything that breaks
 create more tests
 
