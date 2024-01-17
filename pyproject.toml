@@ -12,6 +12,9 @@ Django = "5.0"
 djangorestframework = "3.14"
 pillow = "^10.2.0"
 
+[tool.ruff]
+exclude = ["data", ".venv"]
+
 
 [build-system]
 requires = ["poetry-core"]
