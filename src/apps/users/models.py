@@ -11,7 +11,7 @@ def hash_password(password):
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     username = models.CharField(unique=True, max_length=32, null=False)
-    password = models.CharField(max_length=32, null=False)
+    password = models.CharField(max_length=256, null=False)
     is_active = models.BooleanField(default=True)
 
 
